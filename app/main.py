@@ -21,10 +21,10 @@ def get_weather() -> None:
     weather_info = data["current"]
 
     print("Current weather in Paris:")
-    print(f"Temperature: {weather_info["temp_c"]}°C")
+    print(f"Temperature: {weather_info.get("temp_c")}°C")
     print(f"Condition: {weather_info["condition"]["text"]}")
-    print(f"Wind: {weather_info["wind_kph"]} kph")
-    print(f"Humidity: {weather_info["humidity"]}%")
+    print(f"Wind: {weather_info.get("wind_kph")} kph")
+    print(f"Humidity: {weather_info.get("humidity")}%")
 
 
 if __name__ == "__main__":
