@@ -2,7 +2,7 @@ import os
 import requests
 
 
-def get_weather():
+def get_weather() -> None:
     api_key = os.getenv("API_KEY")
     if not api_key:
         raise ValueError("API_KEY environment variable is not set")
@@ -20,11 +20,11 @@ def get_weather():
     data = response.json()
     weather_info = data["current"]
 
-    print(f"Current weather in Paris:")
-    print(f"Temperature: {weather_info['temp_c']}°C")
-    print(f"Condition: {weather_info['condition']['text']}")
-    print(f"Wind: {weather_info['wind_kph']} kph")
-    print(f"Humidity: {weather_info['humidity']}%")
+    print("Current weather in Paris:")
+    print(f"Temperature: {weather_info["temp_c"]}°C")
+    print(f"Condition: {weather_info["condition"]["text"]}")
+    print(f"Wind: {weather_info["wind_kph"]} kph")
+    print(f"Humidity: {weather_info["humidity"]}%")
 
 
 if __name__ == "__main__":
